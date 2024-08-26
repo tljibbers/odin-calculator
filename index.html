@@ -3,8 +3,45 @@
     <head>
         <meta charset="UTF-8">
         <title> Calculator </title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
     </head>
 
     <body>
+        <div class="container">
+            <div class="enterNum">
+            </div>
+            <div class="buttonContainer">
+                <div class = "Button-Section-1">
+                    <button onclick="removeElement();" id="AC">AC</button>
+                    <button id="+">+/-</button> 
+                    <button id="%">%</button>
+                    <button id="/">/</button>
+                </div>
+                <div class = "Button-Section-2">
+                    <button onclick="addText('7');">7</button>
+                    <button onclick="addText('8');">8</button>
+                    <button onclick="addText('9');">9</button>
+                    <button id="*">*</button>
+                </div>
+                <div class = "Button-Section-3">
+                    <button onclick="addText('4');">4</button>
+                    <button onclick="addText('5');">5</button>
+                    <button onclick="addText('6');">6</button>
+                    <button id="-">-</button>
+                </div>
+                <div class = "Button-Section-4">
+                    <button onclick="addText('1');">1</button>
+                    <button onclick="addText('2');">2</button>
+                    <button onclick="addText('3');">3</button>
+                    <button id="+">+</button>
+                </div>
+                <div class = "Button-Section-5">
+                    <button onclick="addText('0');" id="zero">0</button>
+                    <button onclick="addText('.');" id=".">.</button>
+                    <button id="=">=</button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
