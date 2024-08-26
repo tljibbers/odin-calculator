@@ -10,7 +10,7 @@ function addText(text) {
     const numberOnScreen = document.createTextNode(text);
     extraContainer.id = "num"
     extraContainer.appendChild(numberOnScreen);
-    arrayContainer.push(numberOnScreen);
+    arrayContainer.push(text);
     console.log(arrayContainer);
 }
 
@@ -24,6 +24,15 @@ function removeElement() {
     arrayContainer = []
     console.log(arrayContainer);
 
+}
+
+function operate() {
+    const arrayJoin = arrayContainer.join("");
+    const arraySplit = arrayJoin.split('+');
+    console.log(arraySplit);
+    const number1 = arraySplit[0];
+    const number2 = arraySplit[1];
+    
 }
 
 
