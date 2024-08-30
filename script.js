@@ -1,10 +1,12 @@
 const numberContainer = document.querySelector(".enterNum");
 const extraContainer = document.createElement("div");
+const answerContainer = document.createElement("div");
 const addButton = document.querySelector("#addition");
 const subButton = document.querySelector("#subtraction");
 const divideButton = document.querySelector("#division");
 const multiplicationButton = document.querySelector("#multiplication");
 numberContainer.appendChild(extraContainer);
+numberContainer.appendChild(answerContainer);
 let arrayContainer = [];
 let addMarker = false;
 let subMarker = false;
@@ -63,6 +65,12 @@ function removeElement() {
         elementrev.removeChild(elementrev.firstChild);
     }
 
+    const answerrev = document.getElementById("ans");
+    while(answerrev.firstChild)
+    {
+        answerrev.removeChild(answerrev.firstChild);
+    }
+
     arrayContainer = []
     console.log(arrayContainer);
 
@@ -84,7 +92,12 @@ function operate() {
         const number1 = arraySplitAddition[0];
         const number2 = arraySplitAddition[1];
 
-        console.log(add(Number(number1), Number(number2)));
+         let addDisplay = add(Number(number1), Number(number2));
+         const answerOnScreen = document.createTextNode(String(addDisplay));
+         answerContainer.id = "ans"
+         answerContainer.appendChild(answerOnScreen);
+         
+
 
     }
 
@@ -94,7 +107,10 @@ function operate() {
         const number1 = arraySplitSubtraction[0];
         const number2 = arraySplitSubtraction[1];
 
-        subtract(Number(number1), Number(number2));
+        let subDisplay = subtract(Number(number1), Number(number2));
+        const answerOnScreen = document.createTextNode(String(subDisplay));
+        answerContainer.id = "ans"
+        answerContainer.appendChild(answerOnScreen);
     }
 
     if(multMarker === true)
@@ -103,7 +119,10 @@ function operate() {
         const number1 = arraySplitMultiplication[0];
         const number2 = arraySplitMultiplication[1];
 
-        multiply(Number(number1), Number(number2));
+        let multDisplay = multiply(Number(number1), Number(number2));
+        const answerOnScreen = document.createTextNode(String(multDisplay));
+        answerContainer.id = "ans"
+        answerContainer.appendChild(answerOnScreen);
     }
 
     if(divMarker === true)
@@ -112,7 +131,11 @@ function operate() {
         const number1 = arraySplitDivision[0];
         const number2 = arraySplitDivision[1];
 
-        divide(Number(number1), Number(number2));
+        let divDisplay = divide(Number(number1), Number(number2));
+        const answerOnScreen = document.createTextNode(String(divDisplay));
+        answerContainer.id = "ans"
+        answerContainer.appendChild(answerOnScreen);
+
 
     }
     
